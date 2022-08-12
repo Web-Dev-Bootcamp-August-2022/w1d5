@@ -1,3 +1,6 @@
+// to check if an array method mutates the array
+// check: https://doesitmutate.xyz/ 
+
 console.log('array methods 🙂')
 // map -> changes every element in the array
 // the length of the array remains the same
@@ -290,3 +293,73 @@ console.log(res)
 // of a character in a string
 // .split(<the character>).length - 1
 // 'ereuewe'.split('e').length - 1
+
+
+// sort -> sorts an array 'in place' -> the array 
+// itself is mutated
+
+const nums4 = [23, 7, 12, 45]
+
+// nums4.sort()
+
+
+nums4.sort(function (a, b) {
+	console.log(a, b)
+	// if (b < a) {
+	// 	return - 5
+	// }
+	// if (a < b) {
+	// 	return 23
+	// }
+	// if (a === b) {
+	// 	return 0
+	// }
+	// this sorts descending
+	// return b - a
+	// this sorts ascending
+	return a - b
+})
+
+console.log(nums4)
+
+
+const reviews = [
+	{
+		name: 'foo',
+		rate: 9,
+		score: 7
+	},
+	{
+		name: 'bar',
+		rate: 9,
+		score: 5
+	},
+	{
+		name: 'baz',
+		rate: 5,
+		score: 4
+	}
+]
+
+// 1. sort the reviews ascending by their rates
+reviews.sort(function (a, b) {
+	if (a.rate === b.rate) {
+		return a.score - b.score
+	}
+	return a.rate - b.rate
+})
+console.log(reviews)
+// 2. add a secondary sort criterion if two rates
+// are the same we want to sort by the score
+
+// forEach()
+const array = [3, 6, 9]
+// you cannot return from forEach() for that you need
+// a for loop
+
+
+array.forEach(function (el, i, arr) {
+	console.log(i)
+	console.log(el)
+	console.log(arr)
+})
